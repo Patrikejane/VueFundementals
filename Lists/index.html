@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue - Instance</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+  </head>
+  <body>
+    <div id="app">
+      V-for Directive
+      <div class="">
+        <ul>
+          <li v-for="color in colors">{{color}}</li>
+        </ul>
+      </div>
+      V-for with V-if Directive
+      <div class="">
+        <ul>
+          <li v-for="colorObject in colorObjects" v-if="colorObject.primary">{{colorObject.text}}</li>
+        </ul>
+      </div>
+
+    </div>
+    <script>
+      var app = new Vue({
+        el:'#app',
+        data:{
+          colors:['red','green','blue','yellow','orange'],
+          colorObjects:[
+            {
+            text:'red',
+            primary:false
+          },
+          {
+            text:'green',
+            primary:true
+          },
+          {
+            text:'blue',
+            primary:true
+          },
+          {
+            text:'yellow',
+            primary:true
+          },
+          {
+            text:'orange',
+            primary:false
+          }
+        ]
+      }
+      })
+    </script>
+  </body>
+</html>
