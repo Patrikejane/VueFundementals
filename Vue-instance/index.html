@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue - Instance</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+  </head>
+  <body>
+    <div id="app">
+      {{text}}
+    </div>
+    <script>
+      var app = new Vue({
+        el:'#app',
+        data:{
+          text:`Hello, World  My Name is Raymend Red`
+        }
+      })
+    </script>
+  </body>
+</html>
