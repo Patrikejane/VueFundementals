@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue - Instance</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+  </head>
+  <body>
+    <div id="app">
+      <button class="vue-btn" v-on:click="showSecret"> v-on:click the Secret </button>
+      <button class="vue-btn" @click="showSecret"> @click the Secret </button>
+    </div>
+    <script>
+      var app = new Vue({
+        el:'#app',
+        data:{
+          secretNumber: Math.floor(Math.random() *100) + 1
+        },
+        methods:{
+          showSecret(){
+            alert(`This is your secret: ${this.secretNumber}`)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
