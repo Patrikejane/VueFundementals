@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue - Instance</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="">
+        Count: {{count}}
+      </div>
+      <button class="vue-btn" type="button" name="button" @click="incrementCount"> Increment </button>
+    </div>
+
+    <script>
+
+      var app = new Vue({
+        el:'#app',
+        data:{
+          count:0
+        },
+        methods:{
+          alertTime(){
+            alert(`The Time is ${Date.now().toLocaleString()}`)
+          },
+          incrementCount(){
+            this.count++
+          }
+        },
+        created(){
+          this.alertTime()
+        },
+        mounted(){
+          this.alertTime()
+        },
+        updated(){
+          console.log(('this.count',this.count))
+        }
+      })
+    </script>
+  </body>
+</html>
